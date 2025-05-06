@@ -48,11 +48,13 @@ const WatchList = () => {
     setFilmsToWatch(parsedFilmsToWatch);
   }, []);
 
+  
+
   return (
     <>
       <h1 className='pageHeader'>Watch List</h1>
       {(!filmsToWatch?.length || filmsToWatch?.length === 0) ? (
-        <h1 style={{ margin: '16px 0' }} className="emptyMessage">Add films to your watchlist.</h1>
+        <h1 style={{ margin: '16px 0' }} className="emptyMessage">`Add ${filmsToWatch?.length===1 ? 'film':'films'} to your watchlist.`</h1>
       ) : (
         <FilmsToWatchList
           filmsToWatch={filmsToWatch}
